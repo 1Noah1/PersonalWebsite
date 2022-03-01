@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noah Storck - Gallery</title>
+  </head>
+  <script>
+    $(window).scroll(function () {
+      if ($(window).scrollTop()) {
+        $("nav").addClass("black");
+      } else {
+        $("nav").removeClass("black");
+      }
+    });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background-color: #1d1d1d;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    body {
+      font-family: Arial;
+    }
+    header {
+      width: 100%;
+      height: 100vh;
+      background-size: cover;
+      background-attachment: fixed;
+      background: url(/img/gallery/1.jpg);
+    }
+    .content {
+      width: 100%;
+      margin: 4em auto;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: justify;
+    }
+    .logo {
+      position: fixed;
+      float: left;
+      margin: 16px 36px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.5s;
+    }
+    .logo:hover {
+      transform: scale(1.125);
+    }
+    nav {
+      position: fixed;
+      width: 100%;
+    }
+    nav ul {
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      color: white;
+      padding: 0;
+      text-align: center;
+      margin: 0;
+      transition: 1s;
+    }
+    nav.black ul {
+      background: #000;
+      border-radius: 10px;
+      margin: 5px;
+      box-shadow: 5px 5px 30px 5px #000000;
+    }
+    nav ul li {
+      display: inline-block;
+      padding: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .headerAboutMe {
+      transition: 0.5s;
+    }
+    .headerAboutMe:hover {
+      transform: scale(1.125);
+    }
+    .headerGear {
+      transition: 0.5s;
+    }
+    .headerGear:hover {
+      transform: scale(1.125);
+    }
+    .headerGallery {
+      transition: 0.5s;
+    }
+    .headerGallery:hover {
+      transform: scale(1.125);
+    }
+    .Text {
+      margin: 2%;
+    }
+    .firstImgBox {
+      margin: auto 0;
+    }
+    .firstImg {
+      width: auto;
+      size: cover;
+      height: 100%;
+      width: 100%;
+    }
+  </style>
+  <body a link="white" vlink="white">
+    <div class="wrapper">
+      <header>
+        <nav>
+          <div class="menu">
+            <div class="logo">
+              <a href="Home.html" style="text-decoration: none">Noah Storck</a>
+            </div>
+            <ul>
+              <li class="headerAboutMe">
+                <a href="Home.html#aboutMe">About Me</a>
+              </li>
+              <li class="headerGear"><a href="Home.html#gear">Gear</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="firstImgBox">
+      <img
+        class="firstImg"
+        src="/img/gallery/1.jpg"
+        alt="First Gallery Image"
+      />
+    </div>
+  </body>
+</html>
