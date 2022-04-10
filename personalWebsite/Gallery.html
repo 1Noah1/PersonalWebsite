@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noah Storck - Gallery</title>
+  </head>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script>
+    $(window).scroll(function () {
+      if ($(window).scrollTop()) {
+        $("nav").addClass("black");
+      } else {
+        $("nav").removeClass("black");
+      }
+    });
+  </script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: rgba(149, 149, 149, 149);
+      background-attachment: fixed;
+      background-size: cover;
+    }
+    body {
+      font-family: Arial;
+    }
+    header {
+      width: 100%;
+      height: 10vh;
+      background-size: cover;
+      background-attachment: fixed;
+    }
+    .content {
+      width: 100%;
+      margin: 4em auto;
+      font-size: 20px;
+      line-height: 30px;
+      text-align: justify;
+    }
+    .logo {
+      position: fixed;
+      float: left;
+      margin: 16px 36px;
+      color: white;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.5s;
+    }
+    .logo:hover {
+      transform: scale(1.125);
+    }
+    nav {
+      position: fixed;
+      width: 100%;
+    }
+    nav ul {
+      list-style: none;
+      background: rgba(0, 0, 0, 0);
+      overflow: hidden;
+      color: white;
+      padding: 0;
+      text-align: center;
+      margin: 0;
+      transition: 1s;
+    }
+    nav.black ul {
+      background: rgb(0, 0, 0);
+      border-radius: 10px;
+      margin: 5px;
+      box-shadow: 5px 5px 30px 5px #000000;
+    }
+    nav ul li {
+      display: inline-block;
+      padding: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-family: sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    nav ul li {
+      transition: 0.5s;
+    }
+    nav ul li:hover {
+      scale: 1.125;
+    }
+    .Text {
+      margin: 2%;
+    }
+    .galleryBox {
+      margin: 50px;
+    }
+    .firstRow {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
+      height: fit-content;
+    }
+    .firstImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      float: left;
+      margin: 50px;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .firstImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .firstImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+    .secondImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      float: left;
+      margin: 50px;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .secondImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .secondImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+    .thirdImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      float: left;
+      margin: 50px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-right: 20px;
+    }
+    .thirdImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .thirdImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+    .secondRow {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 100px;
+      height: fit-content;
+    }
+    .fourthImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      margin: 50px;
+      float: left;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .fourthImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .fourthImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+    .fifthImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      float: left;
+      margin: 50px;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .fifthImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .fifthImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+    .sixthImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      margin: 50px;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .sixthImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .sixthImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+    .thirdRow {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 100px;
+      height: fit-content;
+    }
+    .seventhImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      float: left;
+      margin: 50px;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .seventhImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .seventhImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+    .eighthImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      float: left;
+      margin: 50px;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .eighthImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .eighthImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+    .ninthImgBox {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      float: left;
+      margin: 50px;
+      margin-right: 20px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+    .ninthImg {
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      height: 50vh;
+      align-content: center;
+      transition: 0.5s;
+    }
+    .ninthImg:hover {
+      box-shadow: 5px 20px 50px 5px #000000;
+    }
+  </style>
+  <body a link="white" vlink="white">
+    <div class="wrapper">
+      <header>
+        <nav>
+          <div class="menu">
+            <div class="logo">
+              <a style="text-decoration: none" ckass="logo" href="Home.html"
+                >Noah Storck</a
+              >
+            </div>
+            <ul>
+              <li class="headerAboutMe">
+                <a href="/javascript/personalWebsite/Home.html/#aboutMe"
+                  >About Me</a
+                >
+              </li>
+              <li class="headerGear">
+                <a href="/javascript/personalWebsite/Home.html/#aboutMe"
+                  >Gear</a
+                >
+              </li>
+              <li class="headerGallery"><a href="Gallery.html">Gallery</a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+    </div>
+    <div class="galleryBox">
+      <div class="firstRow">
+        <div class="firstImgBox">
+          <a
+          href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+          target="_blank"
+        >
+          <img
+            class="firstImg"
+            src="/javascript/personalWebsite/img/gallery/Thumps/1.jpg"
+            alt="firstImg"
+          />
+        </div>
+        <div class="secondImgBox">
+          <a
+          href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+          target="_blank"
+        >
+          <img
+            class="secondImg"
+            src="/javascript/personalWebsite/img/gallery/Thumps/2.jpg"
+            alt="secondImg"
+          />
+        </div>
+        <div class="thirdImgBox">
+          <a
+          href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+          target="_blank"
+        >
+          <img
+            class="thirdImg"
+            src="/javascript/personalWebsite/img/gallery/Thumps/3.jpg"
+            alt="thirdImg"
+          />
+        </div>
+      </div>
+      <div class="secondRow">
+        <div class="fourthImgBox">
+          <a
+          href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+          target="_blank"
+        >
+          <img
+            class="fourthImg"
+            src="/javascript/personalWebsite/img/gallery/Thumps/4.jpg"
+            alt="fourthImg"
+          />
+        </div>
+        <div class="fifthImgBox">
+          <a
+          href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+          target="_blank"
+        >
+          <img
+            class="fifthImg"
+            src="/javascript/personalWebsite/img/gallery/Thumps/5.jpg"
+            alt="fifthImg"
+          />
+        </div>
+        <div class="sixthImgBox">
+          <a
+          href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+          target="_blank"
+        >
+          <img
+            class="sixthImg"
+            src="/javascript/personalWebsite/img/gallery/Thumps/6.jpg"
+            alt="sixthImg"
+          />
+        </div>
+      </div>
+      <div class="thirdRow">
+        <div class="seventhImgBox">
+            <a
+            href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+            target="_blank"
+          >
+            <img
+              class="seventhImg"
+              src="/javascript/personalWebsite/img/gallery/Thumps/7.jpg"
+              alt="seventhImg"
+            />
+          </a>
+        </div>
+        <div class="eighthImgBox">
+          <a
+          href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+          target="_blank"
+        >
+          <img
+            class="eighthImg"
+            src="/javascript/personalWebsite/img/gallery/Thumps/8.jpg"
+            alt="eighthImg"
+          />
+        </div>
+        <div class="ninthImgBox">
+          <a
+            href="/javascript/personalWebsite/fullscreenImgSlider2/fullscreenImgSlider2.html"
+            target="_blank"
+          >
+            <img
+              class="ninthImg"
+              src="/javascript/personalWebsite/img/gallery/Thumps/9.jpg"
+              alt="ninthImg"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
